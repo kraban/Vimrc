@@ -7,6 +7,10 @@ set mouse=a               " Enable mouse
 set lines=50 columns=100  " Set the size of the editor
 set autoindent            " Enable auto indent
 set number                " Enable line number
+set nowrap                " Disable line wrap
+set ignorecase            " Disable case-sensitive search
+set smartcase             " Enable case-sensitive search only when searching for word with uppercase character
+
 
 " Set the terminal window back to normal size after vim exit
 autocmd VimLeave * !resize -s 24 80
