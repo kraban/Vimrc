@@ -13,7 +13,8 @@ set ignorecase            " Disable case-sensitive search
 set smartcase             " Enable case-sensitive search only when searching for word with uppercase character
 set hlsearch              " Enable highlight when searching
 set incsearch             " Enable start search for word immediately
-
+highlight Normal ctermfg=black ctermbg=231 " Set normal text to black and background to white (231)
+set background=light      " Set background to light for vim to know how to syntax highlight
 
 " Set the terminal window back to normal size after vim exit
 autocmd VimLeave * !resize -s 24 80
