@@ -11,6 +11,8 @@ set number                " Enable line number
 set nowrap                " Disable line wrap
 set showmode              " Always show current mode
 set virtualedit=all       " Enable the cursor to move to positions without characters
+set showmatch             " Set the cursor to make a quick jump to matching (, { and [ when typed
+set matchtime=3           " Set the jumptime for 'showmatch' to 3 tenths of a second
 
 set ignorecase            " Disable case-sensitive search
 set smartcase             " Enable case-sensitive search only when searching for word with uppercase character
@@ -27,6 +29,9 @@ autocmd VimLeave * !resize -s 24 80
 
 " Leave insert mode with two quick presses of j
 imap jj <ESC>
+
+" Map F2 to follow link
+map <F2> <C-]>
 
 " File specific preferences
 autocmd Filetype python set tabstop=4 softtabstop=4
