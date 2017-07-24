@@ -25,16 +25,18 @@ set incsearch             " Enable start search for word immediately
 set wildmenu              " Enable the wildmenu when typing commands
 
 
-" Console-only options
+" Console-only options:
 if !has("gui_running")
 
   " Set the terminal window back to normal size after vim exit
   autocmd VimLeave * !resize -s 24 80
 
-highlight Normal ctermfg=black ctermbg=231 " Set normal text to black and background to white (231)
-set background=light      " Set background to light for vim to know how to syntax highlight
+  highlight Normal ctermfg=black ctermbg=231 " Set normal text to black and background to white (231)
+  set background=light      " Set background to light for vim to know how to syntax highlight
 
 endif
+
+" Key mappings:
 
 " Leave insert mode with two quick presses of j
 imap jj <ESC>
@@ -42,5 +44,23 @@ imap jj <ESC>
 " Map F2 to follow link
 map <F2> <C-]>
 
-" File specific preferences
+" Map F3 to toggle light/dark theme
+map <F3> :call Toggle_theme()<Enter>
+
+" File specific preferences:
 autocmd Filetype python set tabstop=4 softtabstop=4
+
+" Functions:
+
+" Toggle light/dark theme
+function Toggle_theme()
+  if !has("gui_running")
+    if &background ==# "light"
+      set background=dark
+      highlight Normal ctermfg=white ctermbg=black
+    else
+      set background=light
+      highlight Normal ctermfg=black ctermbg=231
+    endif
+  endif
+endfunction
