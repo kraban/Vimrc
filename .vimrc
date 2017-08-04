@@ -1,3 +1,20 @@
+" Functions:
+
+" Toggle light/dark theme
+function Toggle_theme()
+  if !has("gui_running")
+    if &background ==# "light"
+      set background=dark
+      highlight Normal ctermfg=white ctermbg=black
+    else
+      set background=light
+      highlight Normal ctermfg=black ctermbg=231
+    endif
+  endif
+endfunction
+
+" General settings
+
 set scrolloff=4           " Set the number of lines left before the screen scrolls
 set scrolljump=3          " Set the number of lines to jump when reaching end of screen
 set ruler                 " Set the cursor position to always active
@@ -16,6 +33,8 @@ set showmatch             " Set the cursor to make a quick jump to matching (, {
 set matchtime=3           " Set the jumptime for 'showmatch' to 3 tenths of a second
 set showcmd               " Show incomplete command at bottom row when typing them
 set iskeyword+=-          " Make dash '-' part of words, for commands like 'w' and 'b'
+set title                 " Set the title of the console to the document name
+
 
 set ignorecase            " Disable case-sensitive search
 set smartcase             " Enable case-sensitive search only when searching for word with uppercase character
@@ -31,8 +50,9 @@ if !has("gui_running")
   " Set the terminal window back to normal size after vim exit
   autocmd VimLeave * !resize -s 24 80
 
-  highlight Normal ctermfg=black ctermbg=231 " Set normal text to black and background to white (231)
-  set background=light      " Set background to light for vim to know how to syntax highlight
+  " Set vim to start in light theme
+  call Toggle_theme()
+  call Toggle_theme()
 
 endif
 
@@ -47,20 +67,9 @@ map <F2> <C-]>
 " Map F3 to toggle light/dark theme
 map <F3> :call Toggle_theme()<Enter>
 
+" Mat F4 to toggle cursor highlighting
+map <F4> :set cursorline! cursorcolumn!<Enter>
+
 " File specific preferences:
 autocmd Filetype python set tabstop=4 softtabstop=4
 
-" Functions:
-
-" Toggle light/dark theme
-function Toggle_theme()
-  if !has("gui_running")
-    if &background ==# "light"
-      set background=dark
-      highlight Normal ctermfg=white ctermbg=black
-    else
-      set background=light
-      highlight Normal ctermfg=black ctermbg=231
-    endif
-  endif
-endfunction
