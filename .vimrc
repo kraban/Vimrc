@@ -34,6 +34,7 @@ set matchtime=3           " Set the jumptime for 'showmatch' to 3 tenths of a se
 set showcmd               " Show incomplete command at bottom row when typing them
 set iskeyword+=-          " Make dash '-' part of words, for commands like 'w' and 'b'
 set title                 " Set the title of the console to the document name
+filetype plugin on        " Enable filetype specific options to be located in separate files
 
 
 set ignorecase            " Disable case-sensitive search
@@ -69,7 +70,3 @@ map <F3> :call Toggle_theme()<Enter>
 
 " Mat F4 to toggle cursor highlighting
 map <F4> :set cursorline! cursorcolumn!<Enter>
-
-" File specific preferences:
-autocmd Filetype python set tabstop=4 softtabstop=4
-
