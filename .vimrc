@@ -68,5 +68,8 @@ map <F2> <C-]>
 " Map F3 to toggle light/dark theme
 map <F3> :call Toggle_theme()<Enter>
 
-" Mat F4 to toggle cursor highlighting
+" Map F4 to toggle cursor highlighting
 map <F4> :set cursorline! cursorcolumn!<Enter>
+
+" Map Y to work like C and D
+nnoremap Y y$
