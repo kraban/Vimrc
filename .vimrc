@@ -59,6 +59,10 @@ endif
 
 " Key mappings:
 
+" Map leader to space
+nnoremap <Space> <Nop>
+let mapleader = " "
+
 " Leave insert mode with two quick presses of j
 imap jj <ESC>
 
