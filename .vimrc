@@ -59,6 +59,11 @@ endif
 
 " Key mappings:
 
+" Access å, ä and ö with english keyboard
+inoremap {{ <C-k>a@
+inoremap "" <C-k>a"
+inoremap :: <C-k>o:
+
 " Map leader to space
 nnoremap <Space> <Nop>
 let mapleader = " "
