@@ -73,6 +73,10 @@ inoremap ::: <C-k>o:
 nnoremap <Space> <Nop>
 let mapleader = " "
 
+" Easier keybindings of copy/paste to/from clipboard
+vnoremap <leader>c "+y
+nnoremap <leader>v "+P
+
 " Leave insert mode with two quick presses of j
 imap jj <ESC>
 
